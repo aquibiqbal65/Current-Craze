@@ -1,0 +1,279 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Roboto:wght@500&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-text-color: #eeeeee;
+    --secondary-text-color: #ffffff;
+    --accent-color: #2294ed;
+    --accent-color-dark: #1d69a3;
+    --loading-color: #3d0050;
+}
+
+.loading-screen {
+    position:fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(35, 0, 46, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: opacity 3s ease-out;
+    pointer-events: none;
+    /* Allow interaction with elements beneath when loading screen is shown */
+}
+
+.loader {
+    display: flex;
+    align-content: center;
+    border: 20px solid #ad00fd;
+    border-top: 8px solid var(--loading-color);
+    border-radius: 130%;
+    width: 70px;
+    height: 70px;
+    animation: spin 0.5s linear infinite;
+    margin-right: -250px;
+}
+
+.developer-name {
+    display: flex;
+    margin-top: 750px;
+    margin-left: 52px;
+    /* Adjust the spacing as needed */
+    font-size: 16px;
+    /* Adjust the font size as needed */
+    color: #fff;
+    /* Text color for the developer name */
+    font-family: "Poppins", sans-serif;
+    /* Use the desired font family */
+    text-align: center;
+    /* Center-align the developer name */
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(to bottom, #000000,#240029);
+    color: var(--primary-text-color);
+}
+
+p {
+    font-family: "Roboto", sans-serif;
+    color: var(--secondary-text-color);
+    line-height: 1.4rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    max-width: 1600px;
+    margin-inline: auto;
+    overflow: hidden;
+}
+
+nav {
+    background: linear-gradient(to bottom, #560061, #000000);
+    box-shadow: 0 0 20px #1f1f1f;
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    left: 0;
+    right: 0;
+}
+
+.main-nav {
+    justify-content: space-between;
+    padding-block: 20px;
+}
+
+.company-logo img {
+    width: 150px;
+}
+
+.nav-links ul {
+    gap: 50px;
+}
+
+.hover-link {
+    cursor: pointer;
+}
+
+.hover-link:hover {
+    color: var(--secondary-text-color);
+}
+
+.hover-link:active {
+    color: red;
+}
+
+.nav-item.active {
+    color: var(--accent-color);
+}
+
+.search-bar {
+    height: 28px;
+    gap: 8px;
+}
+
+.news-input {
+    background-color: rgb(0, 0, 0);
+    -webkit-text-fill-color: rgb(133, 133, 133);
+    width: 180px;
+    height: 100%;
+    padding-inline: 15px;
+    border-radius: 10px;
+    border: 1px solid #8f00ac;
+    font-family: "Roboto", sans-serif;
+}
+
+.search-button {
+    background-color: #9e00ce;
+    color: white;
+    padding: 4px 20px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-family: "Roboto", sans-serif;
+}
+
+.search-button:hover {
+    background-color: var(--loading-color);
+}
+
+.weatherwidget-io {
+    display: inline-block;
+    margin-top: 97px;
+    margin-bottom: -90px;
+    margin-right: 0px;
+    padding: 15px 50px;
+    font-size: 16px;
+    background-color: #000000;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 0px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.weatherwidget-io:hover {
+    background-color: #555;
+    color: #ffffff;
+}
+
+.tradingview-widget-container {
+    width: 100%;
+    max-width: 2060px; /* Adjust the width as needed */
+    margin-top: 88px;
+    margin-bottom: -90px;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    background-color: #000000;
+    color: #fff;
+    border-radius: 0px;
+  }
+  
+  .tradingview-widget-container__widget {
+    height: 300px; /* Adjust the height as needed */
+  }
+  
+  .tradingview-widget-copyright {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    text-align: center;
+  }
+  
+  .blue-text {
+    color: #00f;
+  }
+
+main {
+    padding-block: 20px;
+    margin-top: 80px;
+    background: linear-gradient(to bottom, #000000, #36003d);
+    background-attachment: fixed;
+}
+
+/* Scrollbar styles for the entire website */
+html::-webkit-scrollbar {
+    background-color: #000;
+    width: 8px;
+    border-radius: 0px;
+}
+
+html::-webkit-scrollbar-track {
+    border-radius: 50px;
+    box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.3);
+}
+
+html::-webkit-scrollbar-thumb {
+    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #a520ca), color-stop(1, #000000));
+    border-radius: 10px;
+}
+
+
+.cards-container {
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 20px;
+    align-items: start;
+}
+
+.card {
+    width: 360px;
+    min-height: 400px;
+    box-shadow: 0 0 40px #000000;
+    border-radius: 30px;
+    cursor: pointer;
+    background-color: #650072;
+    overflow: hidden;
+    transition: all 0.22s ease;
+}
+
+.card:hover {
+    box-shadow: 5px 5px 50px #3d0046;
+    background-color: #4b0055;
+    transform: translateY(20px);
+}
+
+.card-header img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 10px;
+}
+
+.news-source {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 70%;
+    margin-block: 15px;
+    color: rgb(0, 0, 0);
+}

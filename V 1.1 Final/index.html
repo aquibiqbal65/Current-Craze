@@ -1,0 +1,173 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CurrentCraze - Connecting you to the Current World</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="loading-screen" class="loading-screen">
+      <div class="loader"></div>
+      <div class="developer-name">
+        Current Craze :<br>
+        Connecting you to the Current World
+      </div>
+    </div>
+    <nav>
+      <div class="main-nav container flex">
+        <a href="#" onclick="reload()" class="company-logo">
+          <img
+            src="./assets/Current Craze-logos_white.png"
+            alt="company logo"
+          />
+        </a>
+        <div class="nav-links">
+          <ul class="flex">
+            <li
+              class="hover-link nav-item"
+              id="India latest"
+              onclick="onNavItemClick('India latest')"
+            >
+              Home
+            </li>
+            <li
+              class="hover-link nav-item"
+              id="Latest Technology"
+              onclick="onNavItemClick('Latest Technology')"
+            >
+              Technology
+            </li>
+            <li
+              class="hover-link nav-item"
+              id="latest Finance"
+              onclick="onNavItemClick('latest Finance')"
+            >
+              Finance
+            </li>
+            <li
+              class="hover-link nav-item"
+              id="India Sports"
+              onclick="onNavItemClick('India Sports')"
+            >
+              Sports
+            </li>
+            <li
+              class="hover-link nav-item"
+              id="India Today weather"
+              onclick="onNavItemClick('India Today weather')"
+            >
+              Weather
+            </li>
+          </ul>
+        </div>
+
+        <div class="search-bar flex">
+          <input
+            id="search-text"
+            type="text"
+            class="news-input"
+            placeholder="e.g. Science"
+          />
+          <button id="search-button" class="search-button">Search</button>
+        </div>
+      </div>
+    </nav>
+    <a
+      class="weatherwidget-io"
+      href="https://forecast7.com/en/22d8086d20/jamshedpur/"
+      data-label_1="JAMSHEDPUR"
+      data-label_2=""
+      data-font="Play"
+      data-icons="Climacons"
+      data-theme="dark"
+      >JAMSHEDPUR</a
+    >
+    <script>
+      !(function (d, s, id) {
+        var js,
+          fjs = d.getElementsByTagName(s)[0];
+        if (!d.getElementById(id)) {
+          js = d.createElement(s);
+          js.id = id;
+          js.src = "https://weatherwidget.io/js/widget.min.js";
+          fjs.parentNode.insertBefore(js, fjs);
+        }
+      })(document, "script", "weatherwidget-io-js");
+    </script>
+
+    <div class="tradingview-widget-container">
+      <div class="tradingview-widget-container__widget"></div>
+      <div class="tradingview-widget-copyright">
+        <a
+          href="https://in.tradingview.com/"
+          rel="noopener nofollow"
+          target="_blank"
+          ><span class="blue-text"></span></a
+        >
+      </div>
+      <script
+        type="text/javascript"
+        src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js"
+        async
+      >
+        {
+          "symbols": [
+            {
+              "proName": "FOREXCOM:SPXUSD",
+              "title": "S&P 500"
+            },
+            {
+              "proName": "FOREXCOM:NSXUSD",
+              "title": "US 100"
+            },
+            {
+              "proName": "FX_IDC:EURUSD",
+              "title": "EUR to USD"
+            },
+            {
+              "proName": "BITSTAMP:BTCUSD",
+              "title": "Bitcoin"
+            },
+            {
+              "proName": "BITSTAMP:ETHUSD",
+              "title": "Ethereum"
+            }
+          ],
+          "showSymbolLogo": true,
+          "colorTheme": "dark",
+          "isTransparent": true,
+          "displayMode": "adaptive",
+          "locale": "in"
+        }
+      </script>
+    </div>
+    
+    <main>
+      <div class="cards-container container flex" id="cards-container"></div>
+    </main>
+
+    <template id="template-news-card">
+      <div class="card">
+        <div class="card-header">
+          <img
+            src="https://via.placeholder.com/400x200"
+            alt="news-image"
+            id="news-img"
+          />
+        </div>
+        <div class="card-content">
+          <h3 id="news-title">This is the Title</h3>
+          <h6 class="news-source" id="news-source">End Gadget 26/08/2023</h6>
+          <p class="news-desc" id="news-desc">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae
+            saepe quis voluptatum quisquam vitae doloremque facilis molestias
+            quae ratione cumque!
+          </p>
+        </div>
+      </div>
+    </template>
+
+    <script src="script.js"></script>
+  </body>
+</html>
