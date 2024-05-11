@@ -13,7 +13,6 @@
 - **HTML5** - For structuring the web content.
 - **CSS3** - For styling and layout enhancements.
 - **JavaScript (ES6+)** - For interactive elements and API integrations.
-- **React.js** - Utilized as the frontend framework to build a responsive and dynamic user interface.
 
 ## APIs Used
 
