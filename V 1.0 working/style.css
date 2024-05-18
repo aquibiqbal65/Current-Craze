@@ -4,6 +4,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: poppins;
 }
 
 :root {
@@ -11,11 +12,11 @@
     --secondary-text-color: #ffffff;
     --accent-color: #2294ed;
     --accent-color-dark: #1d69a3;
-    --loading-color: #3d0050;
+    --loading-color: #580072;
 }
 
 .loading-screen {
-    position: fixed;
+    position:fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -31,6 +32,7 @@
 }
 
 .loader {
+    display: flex;
     align-content: center;
     border: 20px solid #ad00fd;
     border-top: 8px solid var(--loading-color);
@@ -42,7 +44,9 @@
 }
 
 .developer-name {
+    display: flex;
     margin-top: 750px;
+    margin-left: 52px;
     /* Adjust the spacing as needed */
     font-size: 16px;
     /* Adjust the font size as needed */
@@ -64,9 +68,9 @@
     }
 }
 
-body {
-    font-family: "Poppins", sans-serif;
-    color: var(--primary-text-color);
+
+body{
+    background:linear-gradient(#A4C3B2,#CCE3DE, #EAF4F4,#F6FFF8);
 }
 
 p {
@@ -95,7 +99,9 @@ ul {
 }
 
 nav {
-    background: linear-gradient(to bottom, #560061, #000000);
+    background-color: #000;
+    background:#570072ad;
+    backdrop-filter: blur(70px);
     box-shadow: 0 0 20px #1f1f1f;
     position: fixed;
     top: 0;
@@ -105,6 +111,7 @@ nav {
 }
 
 .main-nav {
+    background: transparent;
     justify-content: space-between;
     padding-block: 20px;
 }
@@ -114,23 +121,29 @@ nav {
 }
 
 .nav-links ul {
+    text-shadow: 1px 1px 6px #000000;    color: var(--primary-text-color);
     gap: 50px;
 }
 
 .hover-link {
     cursor: pointer;
+    transition-duration: 0.2s;
 }
 
 .hover-link:hover {
-    color: var(--secondary-text-color);
+    color: var(--accent-color);
+
 }
 
 .hover-link:active {
-    color: red;
+    color: var(--accent-color-dark);
+    transform: scale(0.95);
+    
 }
 
 .nav-item.active {
     color: var(--accent-color);
+    transform: scale(1);
 }
 
 .search-bar {
@@ -157,6 +170,7 @@ nav {
     border-radius: 30px;
     cursor: pointer;
     font-family: "Roboto", sans-serif;
+    transition-duration: 0.3s;
 }
 
 .search-button:hover {
@@ -170,7 +184,7 @@ nav {
     margin-right: 0px;
     padding: 15px 50px;
     font-size: 16px;
-    background-color: #333;
+    background-color: #000000;
     color: #fff;
     text-decoration: none;
     border-radius: 0px;
@@ -179,7 +193,7 @@ nav {
 
 .weatherwidget-io:hover {
     background-color: #555;
-    color: #fff;
+    color: #ffffff;
 }
 
 .tradingview-widget-container {
@@ -200,6 +214,7 @@ nav {
   
   .tradingview-widget-copyright {
     margin-top: 0px;
+    margin-bottom: 0px;
     text-align: center;
   }
   
@@ -272,3 +287,14 @@ html::-webkit-scrollbar-thumb {
     margin-block: 15px;
     color: rgb(0, 0, 0);
 }
+
+p{
+    font-family: poppins;
+    font-weight: normal;
+    font-size: small;
+    color: var(--secondary-text-color);
+}
+/* 
+html {
+    scroll-behavior: smooth;
+} */

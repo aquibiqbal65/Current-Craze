@@ -100,7 +100,7 @@ ul {
 
 nav {
     background-color: #000;
-    background: transparent;
+    background:#570072ad;
     backdrop-filter: blur(70px);
     box-shadow: 0 0 20px #1f1f1f;
     position: fixed;
