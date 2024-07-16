@@ -26,6 +26,7 @@ function bindData(articles) {
     cardsContainer.appendChild(cardClone);
   });
 }
+
 function fillDataInCard(cardClone, article) {
   const newsImg = cardClone.querySelector("#news-img");
   const newsTitle = cardClone.querySelector("#news-title");
@@ -46,6 +47,7 @@ function fillDataInCard(cardClone, article) {
     window.open(article.url, "_blank");
   });
 }
+
 function hideLoadingScreen() {
   const loadingScreen = document.getElementById("loading-screen");
   loadingScreen.style.opacity = "0";
@@ -58,6 +60,7 @@ function hideLoadingScreen() {
 document.addEventListener("DOMContentLoaded", hideLoadingScreen);
 
 let curSelectedNav = null;
+
 function onNavItemClick(id) {
   fetchNews(id);
   const navItem = document.getElementById(id);
@@ -65,7 +68,6 @@ function onNavItemClick(id) {
   curSelectedNav = navItem;
   curSelectedNav.classList.add("active");
 }
-// script.js
 
 // Function to handle search button click
 function handleSearch() {
@@ -96,3 +98,54 @@ searchButton.addEventListener("click", () => {
   curSelectedNav?.classList.remove("active");
   curSelectedNav = null;
 });
+
+!(function (d, s, id) {
+  var js,
+    fjs = d.getElementsByTagName(s)[0];
+  if (!d.getElementById(id)) {
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "https://weatherwidget.io/js/widget.min.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }
+})(document, "script", "weatherwidget-io-js");
+
+!(function () {
+  const script = document.createElement("script");
+  script.type = "text/javascript";
+  script.src =
+    "https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js";
+  script.async = true;
+  script.innerHTML = `{
+    "symbols": [
+      {
+        "proName": "FOREXCOM:SPXUSD",
+        "title": "S&P 500"
+      },
+      {
+        "proName": "FOREXCOM:NSXUSD",
+        "title": "US 100"
+      },
+      {
+        "proName": "FX_IDC:EURUSD",
+        "title": "EUR to USD"
+      },
+      {
+        "proName": "BITSTAMP:BTCUSD",
+        "title": "Bitcoin"
+      },
+      {
+        "proName": "BITSTAMP:ETHUSD",
+        "title": "Ethereum"
+      }
+    ],
+    "showSymbolLogo": true,
+    "colorTheme": "dark",
+    "isTransparent": true,
+    "displayMode": "adaptive",
+    "locale": "in"
+  }`;
+  document
+    .getElementsByClassName("tradingview-widget-container__widget")[0]
+    .appendChild(script);
+})();

@@ -1,0 +1,19 @@
+{
+	"geolocation": {
+		"data": {
+			"city": "Patna",
+			"country": {
+				"code": "IN",
+				"name": "India"
+			},
+			"subdivision": {
+				"code": "BR",
+				"name": "Bihar"
+			},
+			"timezone": "Asia/Kolkata",
+			"latitude": 25.5908,
+			"longitude": 85.1348
+		},
+		"timestamp": 1721129192872
+	}
+}

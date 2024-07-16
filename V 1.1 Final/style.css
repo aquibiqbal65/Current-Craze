@@ -198,7 +198,7 @@ nav {
 
 .tradingview-widget-container {
     width: 100%;
-    max-width: 2060px; /* Adjust the width as needed */
+    max-width: 2060px;
     margin-top: 88px;
     margin-bottom: -90px;
     padding-top: 10px;
@@ -209,7 +209,7 @@ nav {
   }
   
   .tradingview-widget-container__widget {
-    height: 300px; /* Adjust the height as needed */
+    height: 30px; 
   }
   
   .tradingview-widget-copyright {

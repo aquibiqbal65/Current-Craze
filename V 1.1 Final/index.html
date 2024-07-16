@@ -10,7 +10,7 @@
     <div id="loading-screen" class="loading-screen">
       <div class="loader"></div>
       <div class="developer-name">
-        Current Craze :<br>
+        Current Craze :<br />
         Connecting you to the Current World
       </div>
     </div>
@@ -83,19 +83,6 @@
       data-theme="dark"
       >JAMSHEDPUR</a
     >
-    <script>
-      !(function (d, s, id) {
-        var js,
-          fjs = d.getElementsByTagName(s)[0];
-        if (!d.getElementById(id)) {
-          js = d.createElement(s);
-          js.id = id;
-          js.src = "https://weatherwidget.io/js/widget.min.js";
-          fjs.parentNode.insertBefore(js, fjs);
-        }
-      })(document, "script", "weatherwidget-io-js");
-    </script>
-
     <div class="tradingview-widget-container">
       <div class="tradingview-widget-container__widget"></div>
       <div class="tradingview-widget-copyright">
@@ -103,46 +90,11 @@
           href="https://in.tradingview.com/"
           rel="noopener nofollow"
           target="_blank"
-          ><span class="blue-text"></span></a
-        >
+          ><span class="blue-text"></span
+        ></a>
       </div>
-      <script
-        type="text/javascript"
-        src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js"
-        async
-      >
-        {
-          "symbols": [
-            {
-              "proName": "FOREXCOM:SPXUSD",
-              "title": "S&P 500"
-            },
-            {
-              "proName": "FOREXCOM:NSXUSD",
-              "title": "US 100"
-            },
-            {
-              "proName": "FX_IDC:EURUSD",
-              "title": "EUR to USD"
-            },
-            {
-              "proName": "BITSTAMP:BTCUSD",
-              "title": "Bitcoin"
-            },
-            {
-              "proName": "BITSTAMP:ETHUSD",
-              "title": "Ethereum"
-            }
-          ],
-          "showSymbolLogo": true,
-          "colorTheme": "dark",
-          "isTransparent": true,
-          "displayMode": "adaptive",
-          "locale": "in"
-        }
-      </script>
     </div>
-    
+
     <main>
       <div class="cards-container container flex" id="cards-container"></div>
     </main>
