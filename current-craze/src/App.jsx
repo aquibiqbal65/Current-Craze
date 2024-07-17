@@ -17,10 +17,15 @@ const App = () => {
   }, [query]);
 
   const fetchNews = async (query) => {
-    const res = await fetch(`${url}${query}&apiKey=${API_KEY}`);
-    const data = await res.json();
-    setArticles(data.articles);
-    setLoading(false);
+    try {
+      const res = await fetch(`http://localhost:5000/api/news?q=${query}`);
+      const data = await res.json();
+      setArticles(data.articles);
+    } catch (error) {
+      console.error('Error fetching news:', error);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleSearch = () => {
@@ -115,13 +120,21 @@ const NewsCard = ({ article }) => {
     timeZone: 'Asia/Jakarta',
   });
 
+  const truncateTitle = (title) => {
+    const words = title.split(' ');
+    if (words.length > 10) {
+      return words.slice(0, 8).join(' ') + '...';
+    }
+    return title;
+  };
+
   return (
     <div className="card" onClick={() => window.open(article.url, '_blank')}>
       <div className="card-header">
         <img src={article.urlToImage} alt="news-image" id="news-img" />
       </div>
       <div className="card-content">
-        <h3 id="news-title">{article.title}</h3>
+        <h3 id="news-title">{truncateTitle(article.title)}</h3>
         <h6 className="news-source" id="news-source">
           {article.source.name} · {date}
         </h6>
