@@ -1,7 +1,7 @@
-import express from "express";
-import NewsAPI from "newsapi";
-import cors from "cors";
-import dotenv from "dotenv";
+import express from 'express';
+import NewsAPI from 'newsapi';
+import cors from 'cors';
+import dotenv from 'dotenv';
 
 dotenv.config();
 
@@ -10,13 +10,13 @@ const newsapi = new NewsAPI(process.env.NEWS_API_KEY);
 
 app.use(cors());
 
-app.get("/api/news", async (req, res) => {
-  const query = req.query.q || "India";
+app.get('/api/news', async (req, res) => {
+  const query = req.query.q || 'India';
   try {
     const response = await newsapi.v2.everything({
       q: query,
-      language: "en",
-      sortBy: "publishedAt",
+      language: 'en',
+      sortBy: 'publishedAt',
     });
     res.json(response);
   } catch (error) {

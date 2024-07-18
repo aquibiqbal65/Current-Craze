@@ -2,9 +2,6 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import Logo from "./assets/Logo.png";
 
-const API_KEY = import.meta.env.VITE_API_KEY;
-const url = "https://newsapi.org/v2/everything?q=";
-
 const App = () => {
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -17,8 +14,9 @@ const App = () => {
   }, [query]);
 
   const fetchNews = async (query) => {
+    const BASE_URL = import.meta.env.VITE_BASE_URL;
     try {
-      const res = await fetch(`http://localhost:5000/api/news?q=${query}`);
+      const res = await fetch(`${BASE_URL}/api/news?q=${query}`);
       const data = await res.json();
       setArticles(data.articles);
     } catch (error) {
